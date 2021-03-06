@@ -8,6 +8,10 @@ const nobelRouter = require('./routes/nobel');
 
 const app = express();
 
+app.use(cors());
+
+app.options('*', cors());
+
 if (process.env.NODE_ENV == 'production') {
   // Set static folder
   app.use(express.static('client/build'));
@@ -16,10 +20,6 @@ if (process.env.NODE_ENV == 'production') {
       res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   );
 }
-
-app.use(cors());
-
-app.options('*', cors());
 
 const limiter = rateLimit({
     max: 100, //max number of requests
