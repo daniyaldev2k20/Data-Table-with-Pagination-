@@ -8,9 +8,6 @@ import {
   GridDensitySelector,
   GridToolbarExport
 } from '@material-ui/data-grid';
-import PropTypes from 'prop-types';
-import { makeStyles } from "@material-ui/core/styles";
-import Pagination from '@material-ui/lab/Pagination';
 import LinearProgress from '@material-ui/core/LinearProgress';
 // import SelectMenu from './SelectMenu'
 
@@ -34,43 +31,6 @@ function CustomToolbar() {
     </GridToolbarContainer>
   );
 }
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     '& > *': {
-//       marginTop: theme.spacing(2),
-//     },
-//   },
-// }));
-
-// function CustomPagination(props) {
-//   const { state, api } = props;
-//   const classes = useStyles();
-
-//   return (
-//     <Pagination
-//       className={classes.root}
-//       color="primary"
-//       count={state.pagination.pageCount}
-//       page={state.pagination.page + 1}
-//       onChange={(event, value) => api.current.setPage(value - 1)}
-//       showFirstButton showLastButton 
-//     />
-//   );
-// }
-
-// CustomPagination.propTypes = {
-//   /**
-//    * GridApiRef that let you manipulate the grid.
-//    */
-//   api: PropTypes.shape({
-//     current: PropTypes.object.isRequired,
-//   }).isRequired,
-//   /**
-//    * The GridState object containing the current grid state.
-//    */
-//   state: PropTypes.object.isRequired,
-// };
 
 const DataTable = ({ nobelPrizes, pageSize, rowsPages, handlePageChange, rowCount }) => {
   const columns = [
