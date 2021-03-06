@@ -9,7 +9,7 @@ export async function getList(limit) {
   };
   try {
     const { data: results } = await axios.get(
-      "/api/v1/nobel/allNobels",
+      "https://paginationmedexam.herokuapp.com/api/v1/nobel/allNobels",
       queryParams
     );
     return results.data.nobels;
